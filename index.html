@@ -19,7 +19,14 @@
                     <img :src="image">
                 </div>
                 <div class="product-info">
-                    <h1><a :href="cmu_link">{{ product }}</a></h1> <!-- 3.6 link to cmu page-->
+                   <!--  <h1><a :href="cmu_link">{{ product }}</a></h1> --><!-- 3.6 link to cmu page-->
+                    <h1>{{ product }}</h1>
+                    <p v-if="inventory > 10"> In Stock </p>
+                    <p v-else-if="inventory <= 10 && inventory > 0">In Stock PP</p>
+                    <p v-else> Out of Stock</p>
+                    <!-- 4.9 -->
+                    <p v-if="onSale"> The product on sale </p>
+                    <p v-else>The product run out off</p>
                 </div>
             </div>
         </div>
