@@ -3,7 +3,8 @@ const app = Vue.createApp({
         return {
             product: 'Boots',
             discript: 'It is suitable to wear in the field.',
-            image: './assets/images/socks_green.jpg'
+            image: './assets/images/socks_green.jpg',
+            cmu_link: 'https://www.cmu.ac.th/'
         }
     }
 })
