@@ -1,7 +1,9 @@
-const app = Vue.creteApp({
+const app = Vue.createApp({
     data() {
         return {
-            product: 'Socks'
+            product: 'Boots',
+            discript: 'It is suitable to wear in the field.',
+            image: './assets/images/socks_green.jpg'
         }
     }
 })
