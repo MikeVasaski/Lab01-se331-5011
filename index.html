@@ -20,19 +20,21 @@
                     <img :src="image">
                 </div>
                 <div class="product-info">
-                   <!--  <h1><a :href="cmu_link">{{ product }}</a></h1> --><!-- 3.6 link to cmu page-->
-                    <h1>{{ product }}</h1>
+                    <h1><a :href="cmu_link">{{ product }}</a></h1><!-- 3.6 link to cmu page-->
                     <p v-if="inventory > 10"> In Stock </p>
-                    <p v-else-if="inventory <= 10 && inventory > 0">In Stock PP</p>
+                    <p v-else-if=" inventory > 0">In Stock (at least 10 left)</p>
                     <p v-else> Out of Stock</p>
                     <ul>
                         <li v-for="detail in details">{{ detail }}</li>
                     </ul>
                     <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
-                    <button class="button" @click="addToCart"> Add to Cart</button>
                     
                     <!-- 5.4 not done yet-->
-                    <div v-for="size in sizes">{{ size }}</div>
+                    <div v-for="size in sizes" style="display: inline">{{ size }}</div>
+                    <br>
+                    <button class="button" @click="addToCart"> Add to Cart</button>
+                    <button class="button" @click="changeStute"> Swap Status </button>
+                    
                     <!-- 4.9 -->
                     <p v-if="onSale"> The product on sale </p>
                     <p v-else>The product run out off</p>
@@ -40,7 +42,7 @@
             </div>
         </div>
         <!-- <h1>{{ product }}</h1> -->
-        <!-- <h2>{{ discript }}</h2> //2.5 show to TA-->
+         <h2>{{ discript }}</h2> <!--//2.5 show to TA -->
     </div>
 
     <!-- Import Js -->
